@@ -171,17 +171,17 @@ my %db = %{$config_objects{db}{$env{environment}}};
 my $query;
 my $recordset;
 
-logprint("Creating master database connection object to 'db-prod-01.cluster-c4isziob1sp0.us-east-1.rds.amazonaws.com':$db{clob_db}{port}.");
+logprint("Creating master database connection object to $db{clob_db}{host}:$db{clob_db}{port}.");
 
 mysql_connect(
-	# connection_name => "clob_db",
-	host => "db-prod-01.cluster-c4isziob1sp0.us-east-1.rds.amazonaws.com",
+	connection_name => "clob_db",
+	host => "$db{clob_db}{host}",
 	port => "$db{clob_db}{port}",
 	database => 'pl',
 	username => "$db{clob_db}{user}",
 	password => "$db{clob_db}{password}",
 	verbose => "$opts{q}"
-) or die "Could not connect to 'db-prod-01.cluster-c4isziob1sp0.us-east-1.rds.amazonaws.com':$db{clob_db}{port}\n\t$error_string";
+) or die "Could not connect to $db{clob_db}{host}:$db{clob_db}{port}\n\t$error_string";
 
 ###############################################################################
 # Validate date options.
