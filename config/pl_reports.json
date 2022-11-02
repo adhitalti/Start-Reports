@@ -1,0 +1,18 @@
+{
+	"_ENV" : {
+		"ALL" : {
+		},
+		"DEV" : {
+		},
+		"UAT" : {
+			"reports_distribution_list" : [
+				"adhital@abelnoser.com"
+			]
+		},
+		"PROD" : {
+			"reports_distribution_list" : [
+				"adhital@abelnoser.com"
+			]
+		}
+	}
+}
